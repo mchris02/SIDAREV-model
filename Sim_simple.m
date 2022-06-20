@@ -95,10 +95,10 @@ end
 
 for j=1:N_iter
 
-    %Calculation of the new value for u
+    %Calculation of the new value for psi
     psi0 = psi;
     for k=1:T
-        psi1(k,1) = min(max(inv(R(1,1))*beta(1,1)*x(1,k)*x(2,k)*(l(1,k) - l(7,k)),0),u_max);
+        psi1(k,1) = min(max(inv(R(1,1))*beta(1,1)*x(1,k)*x(7,k)*(l(1,k) - l(7,k)),0),psi_max);
         %f2
     end
     
