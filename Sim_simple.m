@@ -102,10 +102,10 @@ for j=1:N_iter
         %f2
     end
     
-    a = 0.9995; %coefficient used to update the current u 
-    psi = a*psi0 + (1-a)*psi1;%new strategy u
+    a = 0.9995; %coefficient used to update the current psi
+    psi = a*psi0 + (1-a)*psi1;%new strategy psi
     
-    %Update the SIDAREV model trajectory based on current u
+    %Update the SIDAREV model trajectory based on current psi
     for k=2:T
         %Controlled SIDAREV epidemic model
         x(:,k) = epidem(dt, x(:,k-1), beta(1,1), u(k-1,1),psi_i,pi(k-1,1), gamma_i,gamma_d,gamma_a,ksi_i,ksi_d,mi);
