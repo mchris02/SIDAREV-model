@@ -1,12 +1,10 @@
-
-
 function [x, u, C, C1, C2, C3,C4] = Sim_simple(dt, beta, gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, C_dth, c_1_a, pi_set )
 
 T_days = 365; %Number of days
 
 b2=1;
 
-m = 1 %Vaccination Rate
+%Vaccination Rate=1?
 
 R=1 %Cost associated with government strategy (used as basis)
 
@@ -26,10 +24,10 @@ T = T_days/dt;
 l(1:length(x(:,1)),T) = 0; %Lambda boundary conditions
 l(length(x(:,1)),T) = C_dth; %Cost attributed to number of deaths
 u_max = 0.8; %maximum value for u
-psi_max= m;
+psi_max= 1;
 
 u(1:T,1) = 0.4; %Initialisation of u
-pi(1:T,1) = pi_set; %Constant value of testing rate,pi
+pi(1:T,1) = pi_set; %Constant value of testing rate,pi 
 psi(1:T,1) = psi_set; %Constant value of vaccination rate, v
 
 
@@ -146,11 +144,11 @@ for j=1:N_iter
             while(sigma!=0)
                 sigma --;
 
-            end
+             end
         end
     end
 
-    end
+ end
     
     
     %Update the costate variables
