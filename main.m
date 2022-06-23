@@ -1,7 +1,4 @@
-%The different cases considered are associated with the testing rate, 
-%healthcare capacity and cost wieghts for acutely symptomatic and deceased
-%population----------------------------------------------------------------
-
+%Different cases considered are associated with the testing rate and cost wieghts for acutely symptomatic and deceased population
 clear all;
 clc;
 
