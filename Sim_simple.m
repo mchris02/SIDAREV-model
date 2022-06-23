@@ -133,20 +133,25 @@ end
 
 g_x = m - (a+d) + (a+d)*v/z
 
+
 for j=1:N_iter
 
     for k=1:T
-        g(:,k) = m - (a+d) + (a+d)*(v/z)
+       
+        if g(:,k) < 0 && (sigma >=0)
 
-    if g(:,k) < 0
+            sigma++;
+         
+        elseif g(:,k) > 0 && (sigma >=0)
+            while(sigma!=0)
+                sigma --;
 
-        s(k) = forw(s(k,1),dt)
-
-    else
-        s(k) = back(s(k,1),dt)
+            end
+        end
+    end
 
     end
-    end
+    
     
     %Update the costate variables
     for k=T-1:-1:1
