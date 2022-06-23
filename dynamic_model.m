@@ -1,7 +1,7 @@
 
 %Function describing the dynamics of the controlled SIDAREV model 
 
-function [y,dy] = epidem(dt, x, beta,u,psi_i,pi, gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mu)
+function [y,dy] = dynamic_model(dt, x, beta,u,psi_i,pi, gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mu)
 
     
     %Controlled SIDAREV model

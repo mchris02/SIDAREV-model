@@ -1,4 +1,6 @@
-function [x, u, C, C1, C2, C3,C4] = Sim_simple(dt, beta, gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, C_dth, c_1_a, pi_set )
+%Βέλτιστη Στρατηγική u, εύρεση cost function και hamiltonian function, ώστε
+%να βρούμε την pontryagin's function
+function [x, u, C, C1, C2, C3,C4] = optimal_strategy(dt, beta, gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, C_dth, c_1_a, pi_set )
 
 T_days = 365; %Number of days
 
@@ -7,7 +9,6 @@ b2=1;
 %Vaccination Rate=1?
 
 R=1 %Cost associated with government strategy (used as basis)
-
  
 %Initial conditions
 r = 0.00001;
@@ -33,11 +34,11 @@ psi(1:T,1) = psi_set; %Constant value of vaccination rate, v
 
 %Initialization of states and costs
 for k=2:T
-x(:,k) = epidem(dt, x(:,k-1), beta(1,1), u(k-1,1),psi_i,pi(k-1,1), gamma_i,gamma_d,gamma_a,ksi_i,ksi_d,mi);
+x(:,k) = dynamic_model(dt, x(:,k-1), beta(1,1), u(k-1,1),psi_i,pi(k-1,1), gamma_i,gamma_d,gamma_a,ksi_i,ksi_d,mi);
 end
 
 for k=T-1:-1:1
-[l(:,k), dl(:,k)] = pontr(dt, u(k+1,1), l(:,k+1), pi(k+1,1), x(:,k+1),psi_i, beta(1,1), gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, c_1_a);
+[l(:,k), dl(:,k)] = pontryagin's(dt, u(k+1,1), l(:,k+1), pi(k+1,1), x(:,k+1),psi_i, beta(1,1), gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, c_1_a);
 end
 
 %Cost function - aggregate and components----------------------------------
@@ -69,13 +70,13 @@ for j=1:N_iter
     %Update the SIDAREV model trajectory based on current u
     for k=2:T
         %Controlled SIDAREV epidemic model
-        x(:,k) = epidem(dt, x(:,k-1), beta(1,1), u(k-1,1),psi_i,pi(k-1,1), gamma_i,gamma_d,gamma_a,ksi_i,ksi_d,mi);
+        x(:,k) = dynamic_model(dt, x(:,k-1), beta(1,1), u(k-1,1),psi_i,pi(k-1,1), gamma_i,gamma_d,gamma_a,ksi_i,ksi_d,mi);
     end
     
     %Update the costate variables
     for k=T-1:-1:1
         %Pontryagin equations
-        [l(:,k), dl(:,k)] = pontr(dt, u(k+1,1), l(:,k+1), pi(k+1,1), x(:,k+1),psi_i, beta(1,1), gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, c_1_a);
+        [l(:,k), dl(:,k)] = pontryagin's(dt, u(k+1,1), l(:,k+1), pi(k+1,1), x(:,k+1),psi_i, beta(1,1), gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, c_1_a);
     end
 
     %Cost function - aggregate and components associated with iteration j
@@ -106,13 +107,13 @@ for j=1:N_iter
     %Update the SIDAREV model trajectory based on current psi
     for k=2:T
         %Controlled SIDAREV epidemic model
-        x(:,k) = epidem(dt, x(:,k-1), beta(1,1), u(k-1,1),psi_i,pi(k-1,1), gamma_i,gamma_d,gamma_a,ksi_i,ksi_d,mi);
+        x(:,k) = dynamic_model(dt, x(:,k-1), beta(1,1), u(k-1,1),psi_i,pi(k-1,1), gamma_i,gamma_d,gamma_a,ksi_i,ksi_d,mi);
     end
     
     %Update the costate variables
     for k=T-1:-1:1
         %Pontryagin equations
-        [l(:,k), dl(:,k)] = pontr(dt, u(k+1,1), l(:,k+1), pi(k+1,1), x(:,k+1),psi_i, beta(1,1), gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, c_1_a);
+        [l(:,k), dl(:,k)] = pontryagin's(dt, u(k+1,1), l(:,k+1), pi(k+1,1), x(:,k+1),psi_i, beta(1,1), gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, c_1_a);
     end
 
     %Cost function - aggregate and components associated with iteration j
@@ -141,7 +142,7 @@ for j=1:N_iter
             sigma = sigma + 1;
          
         elseif g(:,k) > 0 && (sigma >=0)
-            while(sigma!=0)
+            while(sigma~=0)
                 sigma = sigma -1;
 
              end
@@ -154,8 +155,7 @@ for j=1:N_iter
     %Update the costate variables
     for k=T-1:-1:1
         %Pontryagin equations
-        [l(:,k), dl(:,k)] = pontr(dt, u(k+1,1), l(:,k+1), pi(k+1,1), x(:,k+1),psi_i, beta(1,1), gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, c_1_a);
+        [l(:,k), dl(:,k)] = pontryagin's(dt, u(k+1,1), l(:,k+1), pi(k+1,1), x(:,k+1),psi_i, beta(1,1), gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, c_1_a);
     end
-
 
 end

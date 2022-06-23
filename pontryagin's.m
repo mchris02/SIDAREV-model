@@ -1,6 +1,6 @@
 %function of costate variables update based on pontryagin's minimum principle
 
-function [y,dy] = pontr(dt,u,l, pi, x, psi, beta, gamma_i, gamma_d, gamma_a, ksi_i, ksi_d,mi, s, z,c_1)
+function [y,dy] = pontryagin's(dt,u,l, pi, x, psi, beta, gamma_i, gamma_d, gamma_a, ksi_i, ksi_d,mi, s, z,c_1)
     
     %Equations based on Pontryagin's minimum principle
     dy = [l(1,1)*((beta*x(2,1)*(1-u) + psi) - l(2,1)*beta*(1-u) - l(7,1)*psi;

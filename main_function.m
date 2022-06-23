@@ -43,7 +43,7 @@ for q = 1:3 %associated with three different cost weights for the acutely sympto
             %population---------------------------------------------------
             
             parfor i=1 + (j-1)*N:N + (j-1)*N
-                [x{i}, u(i,:),C(:,i), C1(:,i), C2(:,i), C3(:,i),C4(:,i)] =  Sim_simple(dt, beta,  gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, C_dth, c_1_a, pi_set );
+                [x{i}, u(i,:),C(:,i), C1(:,i), C2(:,i), C3(:,i),C4(:,i)] =  optimal_strategy(dt, beta,  gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, C_dth, c_1_a, pi_set );
             end
         end
 
