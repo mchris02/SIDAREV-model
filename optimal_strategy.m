@@ -133,19 +133,23 @@ end
 g_x = m - (a+d) + (a+d)*v/z
 
 
-for j=1:N_iter
+   %constant ανάλογα με το πόσο γρήγορα τρέχει ο κώδικας - αυξάνεται το σίγμα
+
+constant1=1;
 
     for k=1:T
        
-        if g(:,k) < 0 && (sigma >=0)
 
-            sigma = sigma + 1;
-         
-        elseif g(:,k) > 0 && (sigma >=0)
-            while(sigma~=0)
-                sigma = sigma -1;
+        if g(k,1) < 0 
 
-             end
+            sigma(k,1) = sigma(k,1) + constant1*abs(g(k,1));
+                     
+        elseif g(k,1) > 0 
+
+            sigma(k,1) = sigma(k,1) - constant1*abs(g(k,1));
+
+            sigma(k,1)(max(0,sigma(k,1));
+
         end
     end
 
