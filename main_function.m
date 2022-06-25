@@ -7,7 +7,7 @@ clc;
 
 pi_val = [0;0.05;0.1]; %Testing rate values - values of pi
 c_1_a_val= [0;50000;100000]; %Costs associated with acutely symptomatic population
-psi_val = [0;0.5;1];%Vaccinating rate values - values of psi
+psi_val = %Vaccinating rate values - values of psi
      
 %Costs associated with diseased population     
 C_dth = [0; 200; 400; 600; 800; 1000; 1200; 1400;
