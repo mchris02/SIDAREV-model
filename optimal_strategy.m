@@ -5,6 +5,8 @@ function [x, u, C, C1, C2, C3,C4] = optimal_strategy(dt, beta, gamma_i, gamma_d,
 
 T_days = 365; %Number of days
 
+dt=1;
+
 b2=1; %Cost associated with vaccination
 
 R=1 %Cost associated with government strategy (used as basis)
@@ -19,7 +21,7 @@ x(3,1) = 0; %D
 x(4,1) = 0; %A
 x(5,1) = 0; %R
 x(6,1) = 0; %E
-X(7,1) = 0; %V
+x(7,1) = 0; %V
 
 %Data (Italy)
 T = T_days/dt; 
@@ -29,8 +31,8 @@ u_max = 0.8; %maximum value for u
 psi_max= 1; %maximum vacc value for psi
 
 u(1:T,1) = 0.4; %Initialisation of u
-psi(1:T,1) = ; %Value of vacc rate,psi
-pi(1:T,1) = pi_set; %Value of testing rate,pi 
+psi(1:T,1) = 0.8; %Value of vacc rate,psi
+pi(1:T,1) = 0.5; %Value of testing rate,pi 
 
 
 %Initialization of states and costs
@@ -39,7 +41,7 @@ x(:,k) = dynamic_model(dt, x(:,k-1), beta(1,1), u(k-1,1),psi_i,pi(k-1,1), gamma_
 end
 
 for k=T-1:-1:1
-[l(:,k), dl(:,k)] = pontryagin's(dt, u(k+1,1), l(:,k+1), pi(k+1,1), x(:,k+1),psi_i, beta(1,1), gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, c_1_a);
+[l(:,k), dl(:,k)] = pontryagins(dt, u(k+1,1), l(:,k+1), pi(k+1,1), x(:,k+1),psi_i, beta(1,1), gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, c_1_a);
 end
 
 %Cost function - aggregate and components
@@ -81,7 +83,7 @@ for j=1:N_iter
     %Update the costate variables
     for k=T-1:-1:1
         %Pontryagin equations
-        [l(:,k), dl(:,k)] = pontryagin's(dt, u(k+1,1), l(:,k+1), pi(k+1,1), x(:,k+1),psi_i, beta(1,1), gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, c_1_a);
+        [l(:,k), dl(:,k)] = pontryagins(dt, u(k+1,1), l(:,k+1), pi(k+1,1), x(:,k+1),psi_i, beta(1,1), gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, c_1_a);
     end
 
     %Cost function - aggregate and components associated with iteration j
@@ -113,18 +115,11 @@ constant1=1;
 
             sigma(k,1) = sigma(k,1) - constant1*abs(g(k,1));
 
-            sigma(k,1) = (max(0,sigma(k,1));
+            sigma(k,1) = max(0,sigma(k,1));
 
         end
     end
 
- end
-    
-    
-    %Update the costate variables
-    for k=T-1:-1:1
-        %Pontryagin equations
-        [l(:,k), dl(:,k)] = pontryagin's(dt, u(k+1,1), l(:,k+1), pi(k+1,1), x(:,k+1),psi_i, beta(1,1), gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, c_1_a);
-    end
-
 end
+    
+    
