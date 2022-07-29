@@ -89,3 +89,4 @@ dg_x = [0;
     (a+d)/z]
 
 test = lambda_final - s*transpose(dg_x)
+s = (lambda_final - test)/transpose(dg_x)
