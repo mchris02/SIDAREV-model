@@ -1,7 +1,7 @@
 %Βέλτιστη Στρατηγική u, εύρεση cost function και hamiltonian function, ώστε
 %να βρούμε την pontryagin's function
 
-function [x, u, C, C1, C2, C3,C4] = optimal_strategy(dt, beta, gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, C_dth, c_1_a, pi_set)
+function [x, u, C, C1, C2, C3,C4] = optimal_strategy(dt, beta, gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, C_dth, c_1_a, pi_val)
 
 T_days = 50; %Number of days
 
@@ -28,14 +28,14 @@ x(7,1) = 0; %V
 %Data (Italy)
 T = T_days/dt; 
 l(1:length(x(:,1)),T) = 0; %Lambda boundary conditions
-l(6,T) = C_dth(1,1); %Cost attributed to number of deaths 
+l(6,T) = C_dth; %Cost attributed to number of deaths 
 u_max = 0.8; %maximum value for u
 psi_max= 1; %maximum vacc value for psi
 
 u(1:T,1) = 0.4; %Initialisation of u
 psi(1:T,1) = 0.8; %Value of vacc rate,psi
-pi(1:T,1) = pi_set; %Value of testing rate,pi 
-
+pi(1:T,1) = pi_val; %Value of testing rate,pi 
+sigma(1:T,1) = 0;
 
 %Initialization of states and costs
 for k=2:T
@@ -54,12 +54,12 @@ end
 
     C3(1,1) = x(6,T)*C_dth;  %Cost associated with number of deaths 
      
-    C4(1,1) = 0.5*dt*(c_1_a(4,4)*(x(4,:)*x(4,:).'));  %Cost associated with acutely with the acutely ymptomatic population
+    C4(1,1) = 0.5*dt*(c_1_a*(x(4,:)*x(4,:).'));  %Cost associated with acutely with the acutely ymptomatic population
 
-    C(1,1) = 0.5*dt*(R(1,1)*(u.'*u)) +  0.5*b2*dt*(psi.'*psi) + x(6,T)*C_dth + 0.5*dt*(c_1_a(4,4)*(x(4,:)*x(4,:).'));
+    C(1,1) = 0.5*dt*(R(1,1)*(u.'*u)) +  0.5*b2*dt*(psi.'*psi) + x(6,T)*C_dth + 0.5*dt*(c_1_a*(x(4,:)*x(4,:).'));
 
 
-N_iter = 100000; %number of iterations for the convergence of the algorithm
+N_iter = 50; %number of iterations for the convergence of the algorithm
 
 for j=1:N_iter
 
@@ -89,7 +89,7 @@ for j=1:N_iter
     end
 
     %Cost function - aggregate and components associated with iteration j
-    C(j,1) = 0.5*dt*(R(1,1)*(u.'*u)) +  0.5*b2*dt*(psi.'*psi) + x(6,T)*C_dth + 0.5*dt*(c_1_a(4,4)*(x(4,:)*x(4,:).'));
+    C(j,1) = 0.5*dt*(R(1,1)*(u.'*u)) +  0.5*b2*dt*(psi.'*psi) + x(6,T)*C_dth + 0.5*dt*(c_1_a*(x(4,:)*x(4,:).'));
 
     C1(j,1) = 0.5*dt*(R(1,1)*(u.'*u));
 
@@ -97,17 +97,17 @@ for j=1:N_iter
 
     C3(j,1) = x(6,T)*C_dth; 
 
-    C4(j,1) = 0.5*dt*(c_1_a(4,4)*(x(4,:)*x(4,:).')); 
+    C4(j,1) = 0.5*dt*(c_1_a*(x(4,:)*x(4,:).')); 
 
 end
 
    %constant ανάλογα με το πόσο γρήγορα τρέχει ο κώδικας - αυξάνεται το σίγμα
 
 constant1=1;
-
+m=1;
     for k=1:T
       
-      g(k,1) = m - (a+d) + (a+d)*v/z
+      g(k,1) = m - (x(4,k)+x(3,k)) + (x(4,k)+x(3,k))*x(7,k)/z
 
         if g(k,1) < 0 
 

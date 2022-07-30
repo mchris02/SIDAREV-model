@@ -5,14 +5,18 @@
 clear all;
 clc;
 
-pi_val = [0;0.05;0.1]; %Testing rate values - values of pi
-psi_val = 0.8 %Vaccinating rate values - values of psi
+pi_val = 0.5; %Testing rate value - value of pi
+
+psi_val = 0.8 %Vaccinating rate value - value of psi
+
 c_1_a_val= [0;50000;100000]; %Costs associated with acutely symptomatic population
+
 s=1;
 z=1;
+dt = 1; %time increments
      
 %Costs associated with diseased population     
-C_dth = [0;1200];
+C_dth = [0;2000;4000;8000;12000];
 
 N = length(C_dth); %number of iterations
      
@@ -22,33 +26,23 @@ gamma_i = 1/14; % Recovery rate from infected undetected
 gamma_d = 1/14; % Recovery rate from infected detected
 gamma_a = 1/12.4; %Recovery rate from hospitalized
 mi = 0.0085; %Transition rate from acutely symptomatic to deceased
-dt = 1; %time increments
 psi=0;
+ksi_i = 0.0053;
+ksi_d = 0.0053;
+beta = Rho*(gamma_i + ksi_i); %Definition of R0 in SIDAREV, proven in our paper
 
-for q = 1:3 %associated with three different cost weights for the acutely symptomatic population
-    for f = 1:3 %Different testing rate policies
-        for j=1:3 %Different healthcare capacity levels
+c_1_a = diag([0;0;0;c_1_a_val(1,1);0;0]); %Cost associated with states
 
-            ksi_i = 0.0053;
-            ksi_d = 0.0053;
-            beta = Rho*(gamma_i + ksi_i); %Definition of R0 in SIDAREV, proven in our paper
 
-            c_1_a = diag([0;0;0;c_1_a_val(q,1);0;0]); %Cost associated with states
-
-            pi_set = pi_val(f,1); %Adopted testing rate
-
-            %Different cases of cost weights associated with deceased
-            %population---------------------------------------------------
-            
-            for i= 1 + (j-1)*N:N + (j-1)*N
-                [x{i}, u(i,:),C(:,i), C1(:,i), C2(:,i), C3(:,i),C4(:,i)] =  optimal_strategy(dt, beta,  gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, C_dth, c_1_a, pi_set );
-            end
-            
-        end
-
-        %Workspace is saved in a local folder
-
-        FileName   = ['c1_' num2str(c1a(4,4)) '_v_' num2str(v_set) '.mat'];
-        save(FileName)
-    end
+%Different cases of cost weights associated with deceased %population---------------------------------------------------
+j=1;
+for i= 1 + (j-1)*N:N + (j-1)*N
+   [x{i}, u(i,:),C(:,i), C1(:,i), C2(:,i), C3(:,i),C4(:,i)] =  optimal_strategy(dt, beta,  gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, C_dth(i,1), c_1_a(4,4), pi_val );
 end
+            
+        
+%Workspace is saved in a local folder
+
+FileName   = ['sidarev_model .mat'];
+save(FileName)
+    
