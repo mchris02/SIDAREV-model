@@ -14,7 +14,6 @@ R=1 %Cost associated with government strategy (used as basis)
 %Initial conditions
 
 r = 0.00001;
-s=1;
 z=1;
 
 x(1,1) = 1 - r; %S
@@ -105,6 +104,7 @@ end
 
 constant1=1;
 m=1;
+z=1;
     for k=1:T
       
       g(k,1) = m - (x(4,k)+x(3,k)) + (x(4,k)+x(3,k))*x(7,k)/z
