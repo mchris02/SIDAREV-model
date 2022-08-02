@@ -1,7 +1,7 @@
 %Βέλτιστη Στρατηγική u, εύρεση cost function και hamiltonian function, ώστε
 %να βρούμε την pontryagin's function
 
-function [x, u, C, C1, C2, C3,C4] = optimal_strategy(dt, beta, gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, C_dth, c_1_a, pi_val)
+function [x, u, C, C1, C2, C3,C4] = optimal_strategy(dt, beta, gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, C_dth, c_1_a, pi_val,s,z)
 
 T_days = 50; %Number of days
 
@@ -14,7 +14,7 @@ R=1 %Cost associated with government strategy (used as basis)
 %Initial conditions
 
 r = 0.00001;
-z=1;
+
 
 x(1,1) = 1 - r; %S
 x(2,1) = r; %I
@@ -101,13 +101,10 @@ for j=1:N_iter
 end
 
    %constant ανάλογα με το πόσο γρήγορα τρέχει ο κώδικας - αυξάνεται το σίγμα
-   z=2;
-   m=0.5;
    constant1=1;
-
     for k=1:T
       
-      g(k,1) = m - (x(4,k)+x(3,k)) + (x(4,k)+x(3,k))*x(7,k)/z
+      g(k,1) = 14*s - (x(4,k)+x(3,k)) + (x(4,k)+x(3,k))*x(7,k)/z
 
         if g(k,1) < 0 
 

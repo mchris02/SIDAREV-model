@@ -11,8 +11,8 @@ psi_val = 0.8 %Vaccinating rate value - value of psi
 
 c_1_a_val= [0;50000;100000]; %Costs associated with acutely symptomatic population
 
-s=1;
-z=1;
+z=2;
+s=rand(1,1);
 dt = 1; %time increments
      
 %Costs associated with diseased population     
@@ -37,7 +37,7 @@ c_1_a = diag([0;0;0;c_1_a_val(1,1);0;0]); %Cost associated with states
 %Different cases of cost weights associated with deceased %population---------------------------------------------------
 j=1;
 for i= 1 + (j-1)*N:N + (j-1)*N
-   [x{i}, u(i,:),C(:,i), C1(:,i), C2(:,i), C3(:,i),C4(:,i)] =  optimal_strategy(dt, beta,  gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, C_dth(i,1), c_1_a(4,4), pi_val );
+   [x{i}, u(i,:),C(:,i), C1(:,i), C2(:,i), C3(:,i),C4(:,i)] =  optimal_strategy(dt, beta,  gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, C_dth(i,1), c_1_a(4,4), pi_val,s,z );
 end
             
         
