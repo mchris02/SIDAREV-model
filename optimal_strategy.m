@@ -101,10 +101,10 @@ for j=1:N_iter
 end
 
    %constant ανάλογα με το πόσο γρήγορα τρέχει ο κώδικας - αυξάνεται το σίγμα
+   z=2;
+   m=rand(1000,1);%14m bc (c - cv/2)/14
+   constant1=1;
 
-constant1=1;
-m=1;
-z=1;
     for k=1:T
       
       g(k,1) = m - (x(4,k)+x(3,k)) + (x(4,k)+x(3,k))*x(7,k)/z
