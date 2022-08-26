@@ -104,15 +104,15 @@ end
    constant1=1;
     for k=1:T
       
-      g(k,1) = 14*s - (x(4,k)+x(3,k)) + (x(4,k)+x(3,k))*x(7,k)/z
+      g(k,1) = (14*s)/100000 - (x(4,k)+x(3,k)) + (x(4,k)+x(3,k))*x(7,k)/z
 
         if g(k,1) < 0 
 
-            sigma(k,1) = sigma(k,1) + constant1*abs(g(k,1));
+            sigma(k,1) = sigma(k,1) + constant1/100*abs(g(k,1));
                      
         elseif g(k,1) > 0 
 
-            sigma(k,1) = sigma(k,1) - constant1*abs(g(k,1));
+            sigma(k,1) = sigma(k,1) - constant1/100*abs(g(k,1));
 
             sigma(k,1) = max(0,sigma(k,1));
 
