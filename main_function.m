@@ -12,7 +12,11 @@ psi_val = 0.8 %Vaccinating rate value - value of psi
 c_1_a_val= [0;50000;100000]; %Costs associated with acutely symptomatic population
 
 z=2;
-s=rand(1,1);
+
+%s = 2.85714286; for g(k,1) = 40 40/14
+ s = 7.14285714 %g(k,1) = 100 100/14
+% s = 21.4285714/10000; %g(k,1) = 300  300/14
+
 dt = 1; %time increments
      
 %Costs associated with diseased population     

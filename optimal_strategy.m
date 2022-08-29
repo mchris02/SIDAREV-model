@@ -3,7 +3,7 @@
 
 function [x, u, C, C1, C2, C3,C4] = optimal_strategy(dt, beta, gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, C_dth, c_1_a, pi_val,s,z)
 
-T_days = 50; %Number of days
+T_days = 365; %Number of days
 
 dt=1;
 
@@ -58,7 +58,7 @@ end
     C(1,1) = 0.5*dt*(R(1,1)*(u.'*u)) +  0.5*b2*dt*(psi.'*psi) + x(6,T)*C_dth + 0.5*dt*(c_1_a*(x(4,:)*x(4,:).'));
 
 
-N_iter = 50; %number of iterations for the convergence of the algorithm
+N_iter = 8000; %number of iterations for the convergence of the algorithm
 
 for j=1:N_iter
 
@@ -102,15 +102,16 @@ end
 
    %constant ανάλογα με το πόσο γρήγορα τρέχει ο κώδικας - αυξάνεται το σίγμα
    constant1=1;
+
     for k=1:T
       
-      g(k,1) = (14*s)/100000 - (x(4,k)+x(3,k)) + (x(4,k)+x(3,k))*x(7,k)/z
+      g(k,1) = 14*s - (x(4,k)+x(3,k)) + (x(4,k)+x(3,k))*x(7,k)/z
 
-        if g(k,1) < 0 
+        if g(k,1) > 0 
 
             sigma(k,1) = sigma(k,1) + constant1/100*abs(g(k,1));
                      
-        elseif g(k,1) > 0 
+        elseif g(k,1) < 0 
 
             sigma(k,1) = sigma(k,1) - constant1/100*abs(g(k,1));
 
