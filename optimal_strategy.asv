@@ -58,7 +58,7 @@ end
     C(1,1) = 0.5*dt*(R(1,1)*(u.'*u)) +  0.5*b2*dt*(psi.'*psi) + x(6,T)*C_dth + 0.5*dt*(c_1_a*(x(4,:)*x(4,:).'));
 
 
-N_iter = 1000; %number of iterations for the convergence of the algorithm
+N_iter = 50000; %number of iterations for the convergence of the algorithm
 
 for j=1:N_iter
 

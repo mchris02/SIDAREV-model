@@ -11,6 +11,6 @@ function [y,dy] = dynamic_model(dt, x, beta,u,psi,pi, gamma_i, gamma_d, gamma_a,
     dy(4,1) = ksi_i*x(2,1) +  ksi_d*x(3,1) - gamma_a*x(4,1) - mu*x(4,1); %Acutely symptomatic State
     dy(5,1) = gamma_i*x(2,1) +  gamma_d*x(3,1) + gamma_a*x(4,1); %Recovered State
     dy(6,1) = mu*x(4,1); %Extinct  State
-    dy(7,1) = psi*x(1,1) %Vaccinated State
+    dy(7,1) = psi*x(1,1); %Vaccinated State
 
     y = x + dt*dy; %State update
