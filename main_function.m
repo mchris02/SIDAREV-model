@@ -36,12 +36,12 @@ ksi_i = 0.0053;
 ksi_d = 0.0053;
 beta = Rho*(gamma_i + ksi_i); %Definition of R0 in SIDAREV, proven in our paper
 
-c_1_a = diag([0;0;0;c_1_a_val(1,1);0;0]); %Cost associated with states
+c_1_a = diag([0;0;0;c_1_a_val(2,1);0;0]); %Cost associated with states
 
 
 %Different cases of cost weights associated with deceased %population---------------------------------------------------
 j=1;
-parfor i= 1 + (j-1)*N:N + (j-1)*N
+for i= 1 + (j-1)*N:N + (j-1)*N
    [x{i}, u(i,:),C(:,i), C1(:,i), C2(:,i), C3(:,i),C4(:,i),sigma(:,i)] =  optimal_strategy(dt, beta,  gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, C_dth(i,1), c_1_a(4,4), pi_val,psi,m,z );
 end
             

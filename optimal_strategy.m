@@ -29,7 +29,7 @@ T = T_days/dt;
 l(1:length(x(:,1)),T) = 0; %Lambda boundary conditions
 l(6,T) = C_dth; %Cost attributed to number of deaths 
 u_max = 0.8; %maximum value for u
-psi_max= 1; %maximum vacc value for psi
+psi_max= 0.05; %maximum vacc value for psi
 
 u(1:T,1) = 0.1; %Initialisation of u
 psi(1:T,1) = psi; %Value of vacc rate,psi
@@ -58,7 +58,7 @@ end
     C(1,1) = 0.5*dt*(R(1,1)*(u.'*u)) +  0.5*b2*dt*(psi.'*psi) + x(6,T)*C_dth + 0.5*dt*(c_1_a*(x(4,:)*x(4,:).'));
 
 
-N_iter = 1000; %number of iterations for the convergence of the algorithm
+N_iter = 50000; %number of iterations for the convergence of the algorithm
 
 for j=1:N_iter
 
@@ -68,7 +68,7 @@ for j=1:N_iter
     psi0 = psi;
     for k=1:T
         u1(k,1) = min(max(inv(R(1,1))*beta(1,1)*x(1,k)*x(2,k)*(l(2,k) - l(1,k)),0),u_max); %f1
-        psi1(k,1) = min(max(inv(R(1,1))*beta(1,1)*x(1,k)*x(7,k)*(l(1,k) - l(7,k)),0),psi_max); %f2
+        psi1(k,1) = min(max(inv(b2)*beta(1,1)*x(1,k)*x(7,k)*(l(1,k) - l(7,k)),0),psi_max); %f2
     end
     
     a = 0.9995; %coefficient used to update the current u 
@@ -104,13 +104,13 @@ for j=1:N_iter
     for k=1:T
       
       g2(k,1)=  (x(4,k)+x(3,k)) + (x(4,k)+x(3,k))*x(7,k)/z;
-      g(k,1) = - 14*m + g2(k,1);
+      g(k,1) = - m + g2(k,1);
 
-        if g(k,1) < 0 
+        if g(k,1) > 0 
 
             sigma(k,1) = sigma(k,1) + constant1/100*abs(g(k,1));
                      
-        elseif g(k,1) > 0 
+        elseif g(k,1) < 0 
 
             sigma(k,1) = sigma(k,1) - constant1/100*abs(g(k,1));
 
@@ -121,8 +121,8 @@ for j=1:N_iter
     end     
 end
  
-   figure(1);plot(g2);
-   figure(2);plot(g);
+   figure(1);plot(g);
+   figure(2);plot(g2);
    figure(3);plot(sigma);
 
 end
