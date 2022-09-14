@@ -106,11 +106,11 @@ for j=1:N_iter
       g2(k,1)=  (x(4,k)+x(3,k)) + (x(4,k)+x(3,k))*x(7,k)/z;
       g(k,1) = - m + g2(k,1);
 
-        if g(k,1) > 0 
+        if g(k,1) < 0 
 
             sigma(k,1) = sigma(k,1) + constant1/100*abs(g(k,1));
                      
-        elseif g(k,1) < 0 
+        elseif g(k,1) > 0 
 
             sigma(k,1) = sigma(k,1) - constant1/100*abs(g(k,1));
 
