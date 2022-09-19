@@ -5,15 +5,15 @@
 clear all;
 clc;
 
-pi_val = 0.05; %Testing rate value - value of pi
+pi_val = 0.01; %Testing rate value - value of pi
 
-psi_val = 0.1; %Vaccinating rate value - value of psi
+psi_val = 0.05; %Vaccinating rate value - value of psi
 
 c_1_a_val= [0;50000;100000]; %Costs associated with acutely symptomatic population
 
 z=2;
 
-m = 40/100000;
+m = 100/100000;
 %m = 100/100000;
 %m = 300/100000;
 %m = 1000/100000;
@@ -43,13 +43,13 @@ c_1_a = diag([0;0;0;c_1_a_val(2,1);0;0]); %Cost associated with states
 
 %Different cases of cost weights associated with deceased %population---------------------------------------------------
 j=1;
-for i= 1 + (j-1)*N:N + (j-1)*N
-   [x{i}, u(i,:),C(:,i), C1(:,i), C2(:,i), C3(:,i),C4(:,i),sigma(:,i)] =  optimal_strategy(dt, beta,  gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, C_dth(i,1), c_1_a(4,4), pi_val,psi, m,z );
+for i= 1% + (j-1)*N:N + (j-1)*N
+   [x{i}, u(i,:),C(:,i), C1(:,i), C2(:,i), C3(:,i),C4(:,i),sigma(:,i),g_o(:,i), g2_0(:,i), psi_s(:,i)] =  optimal_strategy(dt, beta,  gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, C_dth(i,1), c_1_a(4,4), pi_val,psi, m,z );
 end
             
         
 %Workspace is saved in a local folder
 
-FileName   = ['sidarev_model .mat'];
-save(FileName)
+% FileName   = ['sidarev_model .mat'];
+% save(FileName)
     

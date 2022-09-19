@@ -1,13 +1,13 @@
 %Βέλτιστη Στρατηγική u, εύρεση cost function και hamiltonian function, ώστε
 %να βρούμε την pontryagin's function
 
-function [x, u, C, C1, C2, C3,C4,sigma,g,g2] = optimal_strategy(dt, beta, gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, C_dth, c_1_a, pi_val,psi,m,z)
+function [x, u, C, C1, C2, C3,C4,sigma,g,g2, psi_o] = optimal_strategy(dt, beta, gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, C_dth, c_1_a, pi_val,psi,m,z)
 
 T_days = 365; %Number of days
 
 dt=1;
 
-b2=1; %Cost associated with vaccination
+b2=1000; %Cost associated with vaccination
 
 R=1; %Cost associated with government strategy (used as basis)
  
@@ -42,7 +42,7 @@ x(:,k) = dynamic_model(dt, x(:,k-1), beta(1,1), u(k-1,1),psi(k-1,1),pi(k-1,1), g
 end
 
 for k=T-1:-1:1
-[l(:,k), dl(:,k)] = pontryagins(dt, u(k+1,1), l(:,k+1), pi(k+1,1), x(:,k+1), psi(k+1,1),sigma(k+1,1), beta(1,1), gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi,z, c_1_a);
+[l(:,k), dl(:,k)] = pontryagins(dt, u(k+1,1), l(:,k+1), pi(k+1,1), x(:,k+1), psi(k+1,1),-sigma(k+1,1), beta(1,1), gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi,z, c_1_a);
 end
 
 %Cost function - aggregate and components
@@ -71,7 +71,7 @@ for j=1:N_iter
         psi1(k,1) = min(max(inv(b2)*beta(1,1)*x(1,k)*x(7,k)*(l(1,k) - l(7,k)),0),psi_max); %f2
     end
     
-    a = 0.9995; %coefficient used to update the current u 
+    a = 0.99; %coefficient used to update the current u 
     u = a*u0 + (1-a)*u1;%new strategy u
     psi = a*psi0 + (1-a)*psi1; %new strategy psi
     
@@ -84,7 +84,7 @@ for j=1:N_iter
     %Update the costate variables
     for k=T-1:-1:1
         %Pontryagin equations
-        [l(:,k), dl(:,k)] = pontryagins(dt, u(k+1,1), l(:,k+1), pi(k+1,1), x(:,k+1), psi(k+1,1),sigma(k+1,1), beta(1,1), gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi,z, c_1_a);
+        [l(:,k), dl(:,k)] = pontryagins(dt, u(k+1,1), l(:,k+1), pi(k+1,1), x(:,k+1), psi(k+1,1),-sigma(k+1,1), beta(1,1), gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi,z, c_1_a);
     end
 
     %Cost function - aggregate and components associated with iteration j
@@ -106,13 +106,13 @@ for j=1:N_iter
       g2(k,1)=  (x(4,k)+x(3,k)) + (x(4,k)+x(3,k))*x(7,k)/z;
       g(k,1) = - m + g2(k,1);
 
-        if g(k,1) < 0 
+        if g(k,1) > 0 
 
-            sigma(k,1) = sigma(k,1) + constant1/100*abs(g(k,1));
+            sigma(k,1) = sigma(k,1) + abs(g(k,1))*constant1*10;
                      
-        elseif g(k,1) > 0 
+        elseif g(k,1) < 0 
 
-            sigma(k,1) = sigma(k,1) - constant1/100*abs(g(k,1));
+            sigma(k,1) = sigma(k,1) - constant1/10*abs(g(k,1));
 
             sigma(k,1) = max(0,sigma(k,1));
 
@@ -120,11 +120,16 @@ for j=1:N_iter
         
     end     
 end
+
+
  
    figure(1);plot(g);
    figure(2);plot(g2);
    figure(3);plot(sigma);
-
+   figure(4);plot(psi);
+   figure(5);plot(u);
+   
+   psi_o = psi;
 end
     
     
