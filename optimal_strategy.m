@@ -1,13 +1,13 @@
 %Βέλτιστη Στρατηγική u, εύρεση cost function και hamiltonian function, ώστε
 %να βρούμε την pontryagin's function
 
-function [x, u, C, C1, C2, C3,C4,sigma,g,g2, psi_o] = optimal_strategy(dt, beta, gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, C_dth, c_1_a, pi_val,psi,m,z)
+function [x, u, C, C1, C2, C3,C4,sigma,g,g2,g_total, psi_o] = optimal_strategy(dt, beta, gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, C_dth, c_1_a, pi_val,psi,m,z,b2)
 
 T_days = 365; %Number of days
 
 dt=1;
 
-b2=1000; %Cost associated with vaccination
+ %Cost associated with vaccination 1000
 
 R=1; %Cost associated with government strategy (used as basis)
  
@@ -53,7 +53,7 @@ end
 
     C3(1,1) = x(6,T)*C_dth;  %Cost associated with number of deaths 
      
-    C4(1,1) = 0.5*dt*(c_1_a*(x(4,:)*x(4,:).'));  %Cost associated with acutely with the acutely ymptomatic population
+    C4(1,1) = 0.5*dt*(c_1_a*(x(4,:)*x(4,:).'));  %Cost associated with acutely with the acutely symptomatic population
 
     C(1,1) = 0.5*dt*(R(1,1)*(u.'*u)) +  0.5*b2*dt*(psi.'*psi) + x(6,T)*C_dth + 0.5*dt*(c_1_a*(x(4,:)*x(4,:).'));
 
@@ -68,7 +68,7 @@ for j=1:N_iter
     psi0 = psi;
     for k=1:T
         u1(k,1) = min(max(inv(R(1,1))*beta(1,1)*x(1,k)*x(2,k)*(l(2,k) - l(1,k)),0),u_max); %f1
-        psi1(k,1) = min(max(inv(b2)*beta(1,1)*x(1,k)*x(7,k)*(l(1,k) - l(7,k)),0),psi_max); %f2
+        psi1(k,1) = min(max(inv(b2)*beta(1,1)*x(1,k)*x(7,k)*(l(7,k) - l(1,k)),0),psi_max); %f2
     end
     
     a = 0.99; %coefficient used to update the current u 
@@ -91,7 +91,6 @@ for j=1:N_iter
     C(j,1) = 0.5*dt*(R(1,1)*(u.'*u)) +  0.5*b2*dt*(psi.'*psi) + x(6,T)*C_dth + 0.5*dt*(c_1_a*(x(4,:)*x(4,:).'));
 
     C1(j,1) = 0.5*dt*(R(1,1)*(u.'*u));
-
     C2(j,1) = 0.5*b2*dt*(psi.'*psi);
 
     C3(j,1) = x(6,T)*C_dth; 
@@ -100,11 +99,12 @@ for j=1:N_iter
     
     %constant ανάλογα με το πόσο γρήγορα τρέχει ο κώδικας - αυξάνεται το σίγμα
    constant1=1;
-
     for k=1:T
+        
       
       g2(k,1)=  (x(4,k)+x(3,k)) + (x(4,k)+x(3,k))*x(7,k)/z;
-      g(k,1) = - m + g2(k,1);
+      g(k,1) = - m+ g2(k,1);
+      g_total(k,1) = g(k,1) - m;
 
         if g(k,1) > 0 
 
@@ -118,18 +118,17 @@ for j=1:N_iter
 
         end
         
-    end     
+    end
 end
+figure(1);plot(g_total);
 
+  %figure(1);plot(g);
+  %figure(2);plot(g2);
+  %figure(3)plot(sigma);
+  % figure(4);plot(psi);
+  % figure(5);plot(u);
+  % figure(6);plot(b2);
+  
+ psi_o = psi;
 
- 
-   figure(1);plot(g);
-   figure(2);plot(g2);
-   figure(3);plot(sigma);
-   figure(4);plot(psi);
-   figure(5);plot(u);
-   
-   psi_o = psi;
-end
-    
     
