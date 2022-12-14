@@ -4,7 +4,7 @@ clear all;
 b2 = [1;1000]; %Costs associated with vaccines 
 m = [0.01;0.03;0.1];
 c_1_a = 0 ; %Costs associated with acutely symptomatic population
-c_1_a_val = 50000;
+c_1_a_val1 = 50000;
 c_1_a_val_ = 100000;
 
                  load (['c_1_a_' num2str(c_1_a(1)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(1,1)) '.mat']);
@@ -159,7 +159,7 @@ c_1_a_val_ = 100000;
                saveas(figure(6),['c_1_a_' num2str(c_1_a(1)) '_b2_' num2str(b2(2,1)) '_m_' num2str(m(3,1)) '_U.jpeg'])
                clf       
              
-                load (['c_1_a_' num2str(c_1_a_val(1)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(1,1)) '.mat']);
+                load (['c_1_a_' num2str(c_1_a_val1(1)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(1,1)) '.mat']);
 
                  figure(7);
                  hold on
@@ -181,11 +181,11 @@ c_1_a_val_ = 100000;
         
         
                %saveas(figure(1),['c_1_a_' num2str(c_1_a(i,1)) '_b2_' num2str(b2(j,1)) '_m_'  num2str(m(k,1)) '_U'],'epsc')
-               saveas(figure(7),['c_1_a_' num2str(c_1_a_val(1)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(1,1)) '_U.jpeg'])
+               saveas(figure(7),['c_1_a_' num2str(c_1_a_val1(1)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(1,1)) '_U.jpeg'])
                clf       
                
                
-                 load (['c_1_a_' num2str(c_1_a_val(1)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(2,1)) '.mat']);
+                 load (['c_1_a_' num2str(c_1_a_val1(1)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(2,1)) '.mat']);
 
                  figure(8);
                  hold on
@@ -207,10 +207,10 @@ c_1_a_val_ = 100000;
         
         
                %saveas(figure(1),['c_1_a_' num2str(c_1_a(i,1)) '_b2_' num2str(b2(j,1)) '_m_'  num2str(m(k,1)) '_U'],'epsc')
-               saveas(figure(8),['c_1_a_' num2str(c_1_a_val(1)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(2,1)) '_U.jpeg'])
+               saveas(figure(8),['c_1_a_' num2str(c_1_a_val1(1)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(2,1)) '_U.jpeg'])
                clf       
               
-               load (['c_1_a_' num2str(c_1_a_val(1)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(3,1)) '.mat']);
+               load (['c_1_a_' num2str(c_1_a_val1(1)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(3,1)) '.mat']);
 
                  figure(9);
                  hold on
@@ -232,10 +232,10 @@ c_1_a_val_ = 100000;
         
         
                %saveas(figure(1),['c_1_a_' num2str(c_1_a(i,1)) '_b2_' num2str(b2(j,1)) '_m_'  num2str(m(k,1)) '_U'],'epsc')
-               saveas(figure(9),['c_1_a_' num2str(c_1_a_val(1)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(3,1)) '_U.jpeg'])
+               saveas(figure(9),['c_1_a_' num2str(c_1_a_val1(1)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(3,1)) '_U.jpeg'])
                clf       
 
-              load (['c_1_a_' num2str(c_1_a_val(1)) '_b2_' num2str(b2(2,1)) '_m_' num2str(m(1,1)) '.mat']);
+              load (['c_1_a_' num2str(c_1_a_val1(1)) '_b2_' num2str(b2(2,1)) '_m_' num2str(m(1,1)) '.mat']);
 
                  figure(10);
                  hold on
@@ -256,10 +256,10 @@ c_1_a_val_ = 100000;
                 ylabel('Intensity of measures','Interpreter','latex');
        
                %saveas(figure(1),['c_1_a_' num2str(c_1_a(i,1)) '_b2_' num2str(b2(j,1)) '_m_'  num2str(m(k,1)) '_U'],'epsc')
-               saveas(figure(10),['c_1_a_' num2str(c_1_a_val(1)) '_b2_' num2str(b2(2,1)) '_m_' num2str(m(1,1)) '_U.jpeg'])
+               saveas(figure(10),['c_1_a_' num2str(c_1_a_val1(1)) '_b2_' num2str(b2(2,1)) '_m_' num2str(m(1,1)) '_U.jpeg'])
                clf       
           
-               load (['c_1_a_' num2str(c_1_a_val(1)) '_b2_' num2str(b2(2,1)) '_m_' num2str(m(2,1)) '.mat']);
+               load (['c_1_a_' num2str(c_1_a_val1(1)) '_b2_' num2str(b2(2,1)) '_m_' num2str(m(2,1)) '.mat']);
 
                  figure(11);
                  hold on
@@ -280,11 +280,11 @@ c_1_a_val_ = 100000;
                 ylabel('Intensity of measures','Interpreter','latex');
        
                %saveas(figure(1),['c_1_a_' num2str(c_1_a(i,1)) '_b2_' num2str(b2(j,1)) '_m_'  num2str(m(k,1)) '_U'],'epsc')
-               saveas(figure(11),['c_1_a_' num2str(c_1_a_val(1)) '_b2_' num2str(b2(2,1)) '_m_' num2str(m(2,1)) '_U.jpeg'])
+               saveas(figure(11),['c_1_a_' num2str(c_1_a_val1(1)) '_b2_' num2str(b2(2,1)) '_m_' num2str(m(2,1)) '_U.jpeg'])
                clf   
 
 
-                 load (['c_1_a_' num2str(c_1_a_val(1)) '_b2_' num2str(b2(2,1)) '_m_' num2str(m(3,1)) '.mat']);
+                 load (['c_1_a_' num2str(c_1_a_val1(1)) '_b2_' num2str(b2(2,1)) '_m_' num2str(m(3,1)) '.mat']);
 
                  figure(12);
                  hold on
@@ -305,7 +305,7 @@ c_1_a_val_ = 100000;
                 ylabel('Intensity of measures','Interpreter','latex');
        
                %saveas(figure(1),['c_1_a_' num2str(c_1_a(i,1)) '_b2_' num2str(b2(j,1)) '_m_'  num2str(m(k,1)) '_U'],'epsc')
-               saveas(figure(12),['c_1_a_' num2str(c_1_a_val(1)) '_b2_' num2str(b2(2,1)) '_m_' num2str(m(3,1)) '_U.jpeg'])
+               saveas(figure(12),['c_1_a_' num2str(c_1_a_val1(1)) '_b2_' num2str(b2(2,1)) '_m_' num2str(m(3,1)) '_U.jpeg'])
                clf   
 
 
