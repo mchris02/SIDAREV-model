@@ -45,7 +45,7 @@ c_1_a = diag([0;0;0;c_1_a_val(q,1);0;0]); %Cost associated with states
 for i= 1:N
    [x{i},u(:,i),C(:,i),C1(:,i),C2(:,i),C3(:,i),C4(:,i),sigma(:,i),g_o(:,i),g2_0(:,i),g_total(:,i),psi_s(:,i)] =  optimal_strategy(dt, beta,  gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, C_dth(i,1), c_1_a(4,4), pi_val,psi, m(q,1),z,b2(j,1));
 end
-end
+
 %Workspace is saved in a local folder
 FileName1 =['c_1_a_' num2str(c_1_a(4,4)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(1,1)) '.mat'];
 FileName2 =['c_1_a_' num2str(c_1_a(4,4)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(2,1)) '.mat'];
@@ -62,4 +62,4 @@ FileName6 =['c_1_a_' num2str(c_1_a(4,4)) '_b2_' num2str(b2(2,1)) '_m_' num2str(m
  save(FileName5)
  save(FileName6)
 end
-
+end
