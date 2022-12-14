@@ -120,7 +120,6 @@ for j=1:N_iter
         
     end
 end
-figure(1);plot(g_total);
 
   %figure(1);plot(g);
   %figure(2);plot(g2);

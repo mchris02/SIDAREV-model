@@ -13,9 +13,6 @@ c_1_a_val= [0;50000;100000]; %Costs associated with acutely symptomatic populati
 
 z=2;
 m = [100/100000;300/100000;1000/100000];
-%m_o = 100/100000; %/orange
-%m_r = 300/100000; %/ red
-%m_g = 1000/100000; %/grey
 
 dt = 1; %time increments
 T_days = 365; %Number of days
@@ -27,7 +24,8 @@ b2 = [1;1000];
 
 N = length(C_dth); %number of iterations
 for q=1:3 %%associated with three different cost weights for the acutely symptomatic population
-for j=1:2
+  for j=1:2
+    for k=1:3
     %Data
 Rho = 5.08; %based on 'Monitoring transmissibility and mortality'
 gamma_i = 1/14; % Recovery rate from infected undetected
@@ -43,23 +41,13 @@ c_1_a = diag([0;0;0;c_1_a_val(q,1);0;0]); %Cost associated with states
 
 %Different cases of cost weights associated with deceased %population---------------------------------------------------
 for i= 1:N
-   [x{i},u(:,i),C(:,i),C1(:,i),C2(:,i),C3(:,i),C4(:,i),sigma(:,i),g_o(:,i),g2_0(:,i),g_total(:,i),psi_s(:,i)] =  optimal_strategy(dt, beta,  gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, C_dth(i,1), c_1_a(4,4), pi_val,psi, m(q,1),z,b2(j,1));
+   [x{i},u(:,i),C(:,i),C1(:,i),C2(:,i),C3(:,i),C4(:,i),sigma(:,i),g_o(:,i),g2_0(:,i),g_total(:,i),psi_s(:,i)] =  optimal_strategy(dt, beta,  gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, C_dth(i,1), c_1_a(4,4), pi_val,psi, m(k,1),z,b2(j,1));
 end
 
 %Workspace is saved in a local folder
-FileName1 =['c_1_a_' num2str(c_1_a(4,4)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(1,1)) '.mat'];
-FileName2 =['c_1_a_' num2str(c_1_a(4,4)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(2,1)) '.mat'];
-FileName3 =['c_1_a_' num2str(c_1_a(4,4)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(3,1)) '.mat'];
+FileName =['c_1_a_' num2str(c_1_a(4,4)) '_b2_' num2str(b2(j,1)) '_m_' num2str(m(k,1)) '.mat'];
 
-FileName4 =['c_1_a_' num2str(c_1_a(4,4)) '_b2_' num2str(b2(2,1)) '_m_' num2str(m(1,1)) '.mat'];
-FileName5 =['c_1_a_' num2str(c_1_a(4,4)) '_b2_' num2str(b2(2,1)) '_m_' num2str(m(2,1)) '.mat'];
-FileName6 =['c_1_a_' num2str(c_1_a(4,4)) '_b2_' num2str(b2(2,1)) '_m_' num2str(m(3,1)) '.mat'];
-
- save(FileName1)
- save(FileName2)
- save(FileName3)
- save(FileName4)
- save(FileName5)
- save(FileName6)
-end
+ save(FileName)
+     end
+   end
 end
