@@ -1,7 +1,7 @@
 %Βέλτιστη Στρατηγική u, εύρεση cost function και hamiltonian function, ώστε
 %να βρούμε την pontryagin's function
 
-function [x, u, C, C1, C2, C3,C4,sigma,g,g2,g_total, psi_o] = optimal_strategy(dt, beta, gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, C_dth, c_1_a, pi_val,psi,m,z,b2)
+function [x, u, C, C1, C2, C3,C4,sigma,g,g2, psi_o] = optimal_strategy(dt, beta, gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, C_dth, c_1_a, pi_val,psi,m,z,b2)
 
 T_days = 365; %Number of days
 
@@ -104,7 +104,6 @@ for j=1:N_iter
       
       g2(k,1)=  (x(4,k)+x(3,k)) + (x(4,k)+x(3,k))*x(7,k)/z;
       g(k,1) = - m+ g2(k,1);
-      g_total(k,1) = g(k,1) - m;
 
         if g(k,1) > 0 
 

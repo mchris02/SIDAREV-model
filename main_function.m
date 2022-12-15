@@ -41,7 +41,7 @@ c_1_a = diag([0;0;0;c_1_a_val(q,1);0;0]); %Cost associated with states
 
 %Different cases of cost weights associated with deceased %population---------------------------------------------------
 parfor i= 1:N
-   [x{i},u(:,i),C(:,i),C1(:,i),C2(:,i),C3(:,i),C4(:,i),sigma(:,i),g_o(:,i),g2_0(:,i),g_total(:,i),psi_s(:,i)] =  optimal_strategy(dt, beta,  gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, C_dth(i,1), c_1_a(4,4), pi_val,psi, m(k,1),z,b2(j,1));
+   [x{i},u(:,i),C(:,i),C1(:,i),C2(:,i),C3(:,i),C4(:,i),sigma(:,i),g_o(:,i),g2_0(:,i),psi_s(:,i)] =  optimal_strategy(dt, beta,  gamma_i, gamma_d, gamma_a, ksi_i, ksi_d, mi, C_dth(i,1), c_1_a(4,4), pi_val,psi, m(k,1),z,b2(j,1));
 end
 
 %Workspace is saved in a local folder

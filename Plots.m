@@ -31,6 +31,7 @@ c_1_a_val_ = 100000;
                 saveas(figure(1),['c_1_a_' num2str(c_1_a(1)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(1,1)) '_U.jpeg'])
 
                  clf
+  
                  figure(111);
                  hold on
                  plot((x{1,1}(1, :)),'g','linewidth',1.5);
@@ -193,6 +194,8 @@ c_1_a_val_ = 100000;
                 saveas(figure(117),['c_1_a_' num2str(c_1_a(1)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(1,1)) '_Vaccinated.jpeg'])
                 clf
 
+                
+
                  load (['c_1_a_' num2str(c_1_a(1)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(2,1)) '.mat']);
 
                  figure(2);
@@ -217,6 +220,9 @@ c_1_a_val_ = 100000;
                %saveas(figure(1),['c_1_a_' num2str(c_1_a(i,1)) '_b2_' num2str(b2(j,1)) '_m_'  num2str(m(k,1)) '_U'],'epsc')
                saveas(figure(2),['c_1_a_' num2str(c_1_a(1)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(2,1)) '_U.jpeg'])
                clf
+
+              
+  
 
                  figure(211);
                  hold on
@@ -408,8 +414,7 @@ c_1_a_val_ = 100000;
                %saveas(figure(1),['c_1_a_' num2str(c_1_a(i,1)) '_b2_' num2str(b2(j,1)) '_m_'  num2str(m(k,1)) '_U'],'epsc')
                saveas(figure(3),['c_1_a_' num2str(c_1_a(1)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(3,1)) '_U.jpeg'])
                clf
-
-
+  
                  figure(311);
                  hold on
                  plot((x{1,1}(1, :)),'g','linewidth',1.5);
@@ -599,7 +604,7 @@ c_1_a_val_ = 100000;
                saveas(figure(4),['c_1_a_' num2str(c_1_a(1)) '_b2_' num2str(b2(2,1)) '_m_' num2str(m(1,1)) '_U.jpeg'])
                clf        
 
-
+              
                  figure(411);
                  hold on
                  plot((x{1,1}(1, :)),'g','linewidth',1.5);
@@ -788,8 +793,7 @@ c_1_a_val_ = 100000;
                %saveas(figure(1),['c_1_a_' num2str(c_1_a(i,1)) '_b2_' num2str(b2(j,1)) '_m_'  num2str(m(k,1)) '_U'],'epsc')
                saveas(figure(5),['c_1_a_' num2str(c_1_a(1)) '_b2_' num2str(b2(2,1)) '_m_' num2str(m(2,1)) '_U.jpeg'])
                clf       
-              
-
+             
                  figure(511);
                  hold on
                  plot((x{1,1}(1, :)),'g','linewidth',1.5);
@@ -980,6 +984,8 @@ c_1_a_val_ = 100000;
                saveas(figure(6),['c_1_a_' num2str(c_1_a(1)) '_b2_' num2str(b2(2,1)) '_m_' num2str(m(3,1)) '_U.jpeg'])
                clf     
 
+              
+
                  figure(611);
                  hold on
                  plot((x{1,1}(1, :)),'g','linewidth',1.5);
@@ -1167,9 +1173,9 @@ c_1_a_val_ = 100000;
         
                %saveas(figure(1),['c_1_a_' num2str(c_1_a(i,1)) '_b2_' num2str(b2(j,1)) '_m_'  num2str(m(k,1)) '_U'],'epsc')
                saveas(figure(7),['c_1_a_' num2str(c_1_a_val1(1)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(1,1)) '_U.jpeg'])
-               clf       
-              
-                                figure(711);
+               clf     
+
+                 figure(711);
                  hold on
                  plot((x{1,1}(1, :)),'g','linewidth',1.5);
                  plot((x{1,2}(1, :)),'c','linewidth',1.5);
@@ -1191,6 +1197,8 @@ c_1_a_val_ = 100000;
                %saveas(figure(1),['c_1_a_' num2str(c_1_a(i,1)) '_b2_' num2str(b2(j,1)) '_m_'  num2str(m(k,1)) '_Susceptible'],'epsc')
                 saveas(figure(711),['c_1_a_' num2str(c_1_a_val1(1)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(1,1)) '_Susceptible.jpeg'])
                  clf
+
+
 
                   figure(712);
                  hold on
@@ -1355,6 +1363,9 @@ c_1_a_val_ = 100000;
                %saveas(figure(1),['c_1_a_' num2str(c_1_a(i,1)) '_b2_' num2str(b2(j,1)) '_m_'  num2str(m(k,1)) '_U'],'epsc')
                saveas(figure(8),['c_1_a_' num2str(c_1_a_val1(1)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(2,1)) '_U.jpeg'])
                clf
+
+              
+  
 
                  figure(811);
                  hold on
@@ -1546,8 +1557,7 @@ c_1_a_val_ = 100000;
                %saveas(figure(1),['c_1_a_' num2str(c_1_a(i,1)) '_b2_' num2str(b2(j,1)) '_m_'  num2str(m(k,1)) '_U'],'epsc')
                saveas(figure(9),['c_1_a_' num2str(c_1_a_val1(1)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(3,1)) '_U.jpeg'])
                clf
-
-
+ 
                  figure(911);
                  hold on
                  plot((x{1,1}(1, :)),'g','linewidth',1.5);
@@ -1735,7 +1745,10 @@ c_1_a_val_ = 100000;
         
                %saveas(figure(1),['c_1_a_' num2str(c_1_a(i,1)) '_b2_' num2str(b2(j,1)) '_m_'  num2str(m(k,1)) '_U'],'epsc')
                saveas(figure(10),['c_1_a_' num2str(c_1_a_val1(1)) '_b2_' num2str(b2(2,1)) '_m_' num2str(m(1,1)) '_U.jpeg'])
-               clf        
+               clf    
+
+             
+  
 
                  figure(1011);
                  hold on
@@ -3393,7 +3406,6 @@ c_1_a_val_ = 100000;
                saveas(figure(1816),['c_1_a_' num2str(c_1_a_val_(1)) '_b2_' num2str(b2(2,1)) '_m_' num2str(m(3,1)) '_Extinct.jpeg'])
                clf
 
-
                 figure(1817);
                  hold on
                  plot((x{1,1}(7, :)),'g','linewidth',1.5);
@@ -3412,8 +3424,32 @@ c_1_a_val_ = 100000;
                 xlabel('Days','Interpreter','latex');
                 ylabel('Percentage of population','Interpreter','latex');
        
-        
                %saveas(figure(1),['c_1_a_' num2str(c_1_a(i,1)) '_b2_' num2str(b2(j,1)) '_m_'  num2str(m(k,1)) '_Vacinated'],'epsc')
                saveas(figure(1817),['c_1_a_' num2str(c_1_a_val_(1)) '_b2_' num2str(b2(2,1)) '_m_' num2str(m(3,1)) '_Vacinated.jpeg'])
                clf
-  
+
+                load (['c_1_a_' num2str(c_1_a(1)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(1,1)) '.mat']);
+                figure(999);
+                 hold on
+                 plot((g_total(:, 1)),'g','linewidth',1.5);
+                 plot((g_total(:, 2)),'c','linewidth',1.5);
+                 plot((g_total(:, 3)),'b','linewidth',1.5);
+                 plot((g_total(:, 4)),'m','linewidth',1.5);
+                 plot((g_total(:, 5)),'y','linewidth',1.5);
+
+                set(0,'DefaultTextInterpreter', 'latex')
+                set(gca,'TickLabelInterpreter','latex');
+                xlim([0 365]);
+                title('Intensity of measures','Interpreter','latex')
+          %     title(['Strategy control against time for b2 = ' num2str(b2(i,1))]);
+                lgd = legend ('0','2000','4000', '8000','12000','Interpreter','latex');
+                title(lgd,'Cost of death','Interpreter','latex') 
+                xlabel('Days','Interpreter','latex');
+                ylabel('Intensity of measures','Interpreter','latex');
+        
+        
+               %saveas(figure(1),['c_1_a_' num2str(c_1_a(i,1)) '_b2_' num2str(b2(j,1)) '_m_'  num2str(m(k,1)) '_U'],'epsc')
+                saveas(figure(999),['c_1_a_' num2str(c_1_a(1)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(1,1)) '_U.jpeg'])
+
+                
+                
