@@ -10,11 +10,11 @@ c_1_a_val_ = 100000;
                 load (['c_1_a_' num2str(c_1_a(1)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(1,1)) '.mat']);
                 figure(1);
                 hold on
-                 plot((g_total(:, 1)),'g','linewidth',1.5);
-                 plot((g_total(:, 2)),'c','linewidth',1.5);
-                 plot((g_total(:, 3)),'b','linewidth',1.5);
-                 plot((g_total(:, 4)),'m','linewidth',1.5);
-                 plot((g_total(:, 5)),'y','linewidth',1.5);
+                 plot((g2_0(:, 1)),'g','linewidth',1.5);
+                 plot((g2_0(:, 2)),'c','linewidth',1.5);
+                 plot((g2_0(:, 3)),'b','linewidth',1.5);
+                 plot((g2_0(:, 4)),'m','linewidth',1.5);
+                 plot((g2_0(:, 5)),'y','linewidth',1.5);
 
                 set(0,'DefaultTextInterpreter', 'latex')
                 set(gca,'TickLabelInterpreter','latex');
@@ -33,11 +33,11 @@ c_1_a_val_ = 100000;
                  load (['c_1_a_' num2str(c_1_a(1)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(2,1)) '.mat']);
                 figure(2);
                 hold on
-                 plot((g_total(:, 1)),'g','linewidth',1.5);
-                 plot((g_total(:, 2)),'c','linewidth',1.5);
-                 plot((g_total(:, 3)),'b','linewidth',1.5);
-                 plot((g_total(:, 4)),'m','linewidth',1.5);
-                 plot((g_total(:, 5)),'y','linewidth',1.5);
+                 plot((g2_0(:, 1)),'g','linewidth',1.5);
+                 plot((g2_0(:, 2)),'c','linewidth',1.5);
+                 plot((g2_0(:, 3)),'b','linewidth',1.5);
+                 plot((g2_0(:, 4)),'m','linewidth',1.5);
+                 plot((g2_0(:, 5)),'y','linewidth',1.5);
 
                 set(0,'DefaultTextInterpreter', 'latex')
                 set(gca,'TickLabelInterpreter','latex');
@@ -56,11 +56,11 @@ c_1_a_val_ = 100000;
                load (['c_1_a_' num2str(c_1_a(1)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(3,1)) '.mat']);
                 figure(3);
                 hold on
-                 plot((g_total(:, 1)),'g','linewidth',1.5);
-                 plot((g_total(:, 2)),'c','linewidth',1.5);
-                 plot((g_total(:, 3)),'b','linewidth',1.5);
-                 plot((g_total(:, 4)),'m','linewidth',1.5);
-                 plot((g_total(:, 5)),'y','linewidth',1.5);
+                 plot((g2_0(:, 1)),'g','linewidth',1.5);
+                 plot((g2_0(:, 2)),'c','linewidth',1.5);
+                 plot((g2_0(:, 3)),'b','linewidth',1.5);
+                 plot((g2_0(:, 4)),'m','linewidth',1.5);
+                 plot((g2_0(:, 5)),'y','linewidth',1.5);
 
                 set(0,'DefaultTextInterpreter', 'latex')
                 set(gca,'TickLabelInterpreter','latex');
@@ -80,11 +80,11 @@ c_1_a_val_ = 100000;
                load (['c_1_a_' num2str(c_1_a(1)) '_b2_' num2str(b2(2,1)) '_m_' num2str(m(1,1)) '.mat']);
                figure(4);
                 hold on
-                 plot((g_total(:, 1)),'g','linewidth',1.5);
-                 plot((g_total(:, 2)),'c','linewidth',1.5);
-                 plot((g_total(:, 3)),'b','linewidth',1.5);
-                 plot((g_total(:, 4)),'m','linewidth',1.5);
-                 plot((g_total(:, 5)),'y','linewidth',1.5);
+                 plot((g2_0(:, 1)),'g','linewidth',1.5);
+                 plot((g2_0(:, 2)),'c','linewidth',1.5);
+                 plot((g2_0(:, 3)),'b','linewidth',1.5);
+                 plot((g2_0(:, 4)),'m','linewidth',1.5);
+                 plot((g2_0(:, 5)),'y','linewidth',1.5);
 
                 set(0,'DefaultTextInterpreter', 'latex')
                 set(gca,'TickLabelInterpreter','latex');
@@ -103,11 +103,11 @@ c_1_a_val_ = 100000;
                load (['c_1_a_' num2str(c_1_a(1)) '_b2_' num2str(b2(2,1)) '_m_' num2str(m(2,1)) '.mat']);
                figure(5);
                 hold on
-                 plot((g_total(:, 1)),'g','linewidth',1.5);
-                 plot((g_total(:, 2)),'c','linewidth',1.5);
-                 plot((g_total(:, 3)),'b','linewidth',1.5);
-                 plot((g_total(:, 4)),'m','linewidth',1.5);
-                 plot((g_total(:, 5)),'y','linewidth',1.5);
+                 plot((g2_0(:, 1)),'g','linewidth',1.5);
+                 plot((g2_0(:, 2)),'c','linewidth',1.5);
+                 plot((g2_0(:, 3)),'b','linewidth',1.5);
+                 plot((g2_0(:, 4)),'m','linewidth',1.5);
+                 plot((g2_0(:, 5)),'y','linewidth',1.5);
 
                 set(0,'DefaultTextInterpreter', 'latex')
                 set(gca,'TickLabelInterpreter','latex');
@@ -127,11 +127,11 @@ c_1_a_val_ = 100000;
                load (['c_1_a_' num2str(c_1_a(1)) '_b2_' num2str(b2(2,1)) '_m_' num2str(m(3,1)) '.mat']);
                figure(6);
                 hold on
-                 plot((g_total(:, 1)),'g','linewidth',1.5);
-                 plot((g_total(:, 2)),'c','linewidth',1.5);
-                 plot((g_total(:, 3)),'b','linewidth',1.5);
-                 plot((g_total(:, 4)),'m','linewidth',1.5);
-                 plot((g_total(:, 5)),'y','linewidth',1.5);
+                 plot((g2_0(:, 1)),'g','linewidth',1.5);
+                 plot((g2_0(:, 2)),'c','linewidth',1.5);
+                 plot((g2_0(:, 3)),'b','linewidth',1.5);
+                 plot((g2_0(:, 4)),'m','linewidth',1.5);
+                 plot((g2_0(:, 5)),'y','linewidth',1.5);
 
                 set(0,'DefaultTextInterpreter', 'latex')
                 set(gca,'TickLabelInterpreter','latex');
@@ -150,11 +150,11 @@ c_1_a_val_ = 100000;
                                load (['c_1_a_' num2str(c_1_a_val1(1)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(1,1)) '.mat']);
                 figure(7);
                 hold on
-                 plot((g_total(:, 1)),'g','linewidth',1.5);
-                 plot((g_total(:, 2)),'c','linewidth',1.5);
-                 plot((g_total(:, 3)),'b','linewidth',1.5);
-                 plot((g_total(:, 4)),'m','linewidth',1.5);
-                 plot((g_total(:, 5)),'y','linewidth',1.5);
+                 plot((g2_0(:, 1)),'g','linewidth',1.5);
+                 plot((g2_0(:, 2)),'c','linewidth',1.5);
+                 plot((g2_0(:, 3)),'b','linewidth',1.5);
+                 plot((g2_0(:, 4)),'m','linewidth',1.5);
+                 plot((g2_0(:, 5)),'y','linewidth',1.5);
 
                 set(0,'DefaultTextInterpreter', 'latex')
                 set(gca,'TickLabelInterpreter','latex');
@@ -173,11 +173,11 @@ c_1_a_val_ = 100000;
                  load (['c_1_a_' num2str(c_1_a_val1(1)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(2,1)) '.mat']);
                 figure(8);
                 hold on
-                 plot((g_total(:, 1)),'g','linewidth',1.5);
-                 plot((g_total(:, 2)),'c','linewidth',1.5);
-                 plot((g_total(:, 3)),'b','linewidth',1.5);
-                 plot((g_total(:, 4)),'m','linewidth',1.5);
-                 plot((g_total(:, 5)),'y','linewidth',1.5);
+                 plot((g2_0(:, 1)),'g','linewidth',1.5);
+                 plot((g2_0(:, 2)),'c','linewidth',1.5);
+                 plot((g2_0(:, 3)),'b','linewidth',1.5);
+                 plot((g2_0(:, 4)),'m','linewidth',1.5);
+                 plot((g2_0(:, 5)),'y','linewidth',1.5);
 
                 set(0,'DefaultTextInterpreter', 'latex')
                 set(gca,'TickLabelInterpreter','latex');
@@ -196,11 +196,11 @@ c_1_a_val_ = 100000;
                load (['c_1_a_' num2str(c_1_a_val1(1)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(3,1)) '.mat']);
                 figure(9);
                 hold on
-                 plot((g_total(:, 1)),'g','linewidth',1.5);
-                 plot((g_total(:, 2)),'c','linewidth',1.5);
-                 plot((g_total(:, 3)),'b','linewidth',1.5);
-                 plot((g_total(:, 4)),'m','linewidth',1.5);
-                 plot((g_total(:, 5)),'y','linewidth',1.5);
+                 plot((g2_0(:, 1)),'g','linewidth',1.5);
+                 plot((g2_0(:, 2)),'c','linewidth',1.5);
+                 plot((g2_0(:, 3)),'b','linewidth',1.5);
+                 plot((g2_0(:, 4)),'m','linewidth',1.5);
+                 plot((g2_0(:, 5)),'y','linewidth',1.5);
 
                 set(0,'DefaultTextInterpreter', 'latex')
                 set(gca,'TickLabelInterpreter','latex');
@@ -220,11 +220,11 @@ c_1_a_val_ = 100000;
                load (['c_1_a_' num2str(c_1_a_val1(1)) '_b2_' num2str(b2(2,1)) '_m_' num2str(m(1,1)) '.mat']);
                figure(10);
                 hold on
-                 plot((g_total(:, 1)),'g','linewidth',1.5);
-                 plot((g_total(:, 2)),'c','linewidth',1.5);
-                 plot((g_total(:, 3)),'b','linewidth',1.5);
-                 plot((g_total(:, 4)),'m','linewidth',1.5);
-                 plot((g_total(:, 5)),'y','linewidth',1.5);
+                 plot((g2_0(:, 1)),'g','linewidth',1.5);
+                 plot((g2_0(:, 2)),'c','linewidth',1.5);
+                 plot((g2_0(:, 3)),'b','linewidth',1.5);
+                 plot((g2_0(:, 4)),'m','linewidth',1.5);
+                 plot((g2_0(:, 5)),'y','linewidth',1.5);
 
                 set(0,'DefaultTextInterpreter', 'latex')
                 set(gca,'TickLabelInterpreter','latex');
@@ -243,11 +243,11 @@ c_1_a_val_ = 100000;
                load (['c_1_a_' num2str(c_1_a_val1(1)) '_b2_' num2str(b2(2,1)) '_m_' num2str(m(2,1)) '.mat']);
                figure(11);
                 hold on
-                 plot((g_total(:, 1)),'g','linewidth',1.5);
-                 plot((g_total(:, 2)),'c','linewidth',1.5);
-                 plot((g_total(:, 3)),'b','linewidth',1.5);
-                 plot((g_total(:, 4)),'m','linewidth',1.5);
-                 plot((g_total(:, 5)),'y','linewidth',1.5);
+                 plot((g2_0(:, 1)),'g','linewidth',1.5);
+                 plot((g2_0(:, 2)),'c','linewidth',1.5);
+                 plot((g2_0(:, 3)),'b','linewidth',1.5);
+                 plot((g2_0(:, 4)),'m','linewidth',1.5);
+                 plot((g2_0(:, 5)),'y','linewidth',1.5);
 
                 set(0,'DefaultTextInterpreter', 'latex')
                 set(gca,'TickLabelInterpreter','latex');
@@ -267,11 +267,11 @@ c_1_a_val_ = 100000;
                load (['c_1_a_' num2str(c_1_a_val1(1)) '_b2_' num2str(b2(2,1)) '_m_' num2str(m(3,1)) '.mat']);
                figure(12);
                 hold on
-                 plot((g_total(:, 1)),'g','linewidth',1.5);
-                 plot((g_total(:, 2)),'c','linewidth',1.5);
-                 plot((g_total(:, 3)),'b','linewidth',1.5);
-                 plot((g_total(:, 4)),'m','linewidth',1.5);
-                 plot((g_total(:, 5)),'y','linewidth',1.5);
+                 plot((g2_0(:, 1)),'g','linewidth',1.5);
+                 plot((g2_0(:, 2)),'c','linewidth',1.5);
+                 plot((g2_0(:, 3)),'b','linewidth',1.5);
+                 plot((g2_0(:, 4)),'m','linewidth',1.5);
+                 plot((g2_0(:, 5)),'y','linewidth',1.5);
 
                 set(0,'DefaultTextInterpreter', 'latex')
                 set(gca,'TickLabelInterpreter','latex');
@@ -291,11 +291,11 @@ c_1_a_val_ = 100000;
                 load (['c_1_a_' num2str(c_1_a_val_(1)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(1,1)) '.mat']);
                 figure(13);
                 hold on
-                 plot((g_total(:, 1)),'g','linewidth',1.5);
-                 plot((g_total(:, 2)),'c','linewidth',1.5);
-                 plot((g_total(:, 3)),'b','linewidth',1.5);
-                 plot((g_total(:, 4)),'m','linewidth',1.5);
-                 plot((g_total(:, 5)),'y','linewidth',1.5);
+                 plot((g2_0(:, 1)),'g','linewidth',1.5);
+                 plot((g2_0(:, 2)),'c','linewidth',1.5);
+                 plot((g2_0(:, 3)),'b','linewidth',1.5);
+                 plot((g2_0(:, 4)),'m','linewidth',1.5);
+                 plot((g2_0(:, 5)),'y','linewidth',1.5);
 
                 set(0,'DefaultTextInterpreter', 'latex')
                 set(gca,'TickLabelInterpreter','latex');
@@ -314,11 +314,11 @@ c_1_a_val_ = 100000;
                  load (['c_1_a_' num2str(c_1_a_val_(1)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(2,1)) '.mat']);
                 figure(14);
                 hold on
-                 plot((g_total(:, 1)),'g','linewidth',1.5);
-                 plot((g_total(:, 2)),'c','linewidth',1.5);
-                 plot((g_total(:, 3)),'b','linewidth',1.5);
-                 plot((g_total(:, 4)),'m','linewidth',1.5);
-                 plot((g_total(:, 5)),'y','linewidth',1.5);
+                 plot((g2_0(:, 1)),'g','linewidth',1.5);
+                 plot((g2_0(:, 2)),'c','linewidth',1.5);
+                 plot((g2_0(:, 3)),'b','linewidth',1.5);
+                 plot((g2_0(:, 4)),'m','linewidth',1.5);
+                 plot((g2_0(:, 5)),'y','linewidth',1.5);
 
                 set(0,'DefaultTextInterpreter', 'latex')
                 set(gca,'TickLabelInterpreter','latex');
@@ -337,11 +337,11 @@ c_1_a_val_ = 100000;
                load (['c_1_a_' num2str(c_1_a_val_(1)) '_b2_' num2str(b2(1,1)) '_m_' num2str(m(3,1)) '.mat']);
                 figure(15);
                 hold on
-                 plot((g_total(:, 1)),'g','linewidth',1.5);
-                 plot((g_total(:, 2)),'c','linewidth',1.5);
-                 plot((g_total(:, 3)),'b','linewidth',1.5);
-                 plot((g_total(:, 4)),'m','linewidth',1.5);
-                 plot((g_total(:, 5)),'y','linewidth',1.5);
+                 plot((g2_0(:, 1)),'g','linewidth',1.5);
+                 plot((g2_0(:, 2)),'c','linewidth',1.5);
+                 plot((g2_0(:, 3)),'b','linewidth',1.5);
+                 plot((g2_0(:, 4)),'m','linewidth',1.5);
+                 plot((g2_0(:, 5)),'y','linewidth',1.5);
 
                 set(0,'DefaultTextInterpreter', 'latex')
                 set(gca,'TickLabelInterpreter','latex');
@@ -361,11 +361,11 @@ c_1_a_val_ = 100000;
                load (['c_1_a_' num2str(c_1_a_val_(1)) '_b2_' num2str(b2(2,1)) '_m_' num2str(m(1,1)) '.mat']);
                figure(16);
                 hold on
-                 plot((g_total(:, 1)),'g','linewidth',1.5);
-                 plot((g_total(:, 2)),'c','linewidth',1.5);
-                 plot((g_total(:, 3)),'b','linewidth',1.5);
-                 plot((g_total(:, 4)),'m','linewidth',1.5);
-                 plot((g_total(:, 5)),'y','linewidth',1.5);
+                 plot((g2_0(:, 1)),'g','linewidth',1.5);
+                 plot((g2_0(:, 2)),'c','linewidth',1.5);
+                 plot((g2_0(:, 3)),'b','linewidth',1.5);
+                 plot((g2_0(:, 4)),'m','linewidth',1.5);
+                 plot((g2_0(:, 5)),'y','linewidth',1.5);
 
                 set(0,'DefaultTextInterpreter', 'latex')
                 set(gca,'TickLabelInterpreter','latex');
@@ -384,11 +384,11 @@ c_1_a_val_ = 100000;
                load (['c_1_a_' num2str(c_1_a_val_(1)) '_b2_' num2str(b2(2,1)) '_m_' num2str(m(2,1)) '.mat']);
                figure(17);
                 hold on
-                 plot((g_total(:, 1)),'g','linewidth',1.5);
-                 plot((g_total(:, 2)),'c','linewidth',1.5);
-                 plot((g_total(:, 3)),'b','linewidth',1.5);
-                 plot((g_total(:, 4)),'m','linewidth',1.5);
-                 plot((g_total(:, 5)),'y','linewidth',1.5);
+                 plot((g2_0(:, 1)),'g','linewidth',1.5);
+                 plot((g2_0(:, 2)),'c','linewidth',1.5);
+                 plot((g2_0(:, 3)),'b','linewidth',1.5);
+                 plot((g2_0(:, 4)),'m','linewidth',1.5);
+                 plot((g2_0(:, 5)),'y','linewidth',1.5);
 
                 set(0,'DefaultTextInterpreter', 'latex')
                 set(gca,'TickLabelInterpreter','latex');
@@ -408,11 +408,11 @@ c_1_a_val_ = 100000;
                load (['c_1_a_' num2str(c_1_a_val_(1)) '_b2_' num2str(b2(2,1)) '_m_' num2str(m(3,1)) '.mat']);
                figure(18);
                 hold on
-                 plot((g_total(:, 1)),'g','linewidth',1.5);
-                 plot((g_total(:, 2)),'c','linewidth',1.5);
-                 plot((g_total(:, 3)),'b','linewidth',1.5);
-                 plot((g_total(:, 4)),'m','linewidth',1.5);
-                 plot((g_total(:, 5)),'y','linewidth',1.5);
+                 plot((g2_0(:, 1)),'g','linewidth',1.5);
+                 plot((g2_0(:, 2)),'c','linewidth',1.5);
+                 plot((g2_0(:, 3)),'b','linewidth',1.5);
+                 plot((g2_0(:, 4)),'m','linewidth',1.5);
+                 plot((g2_0(:, 5)),'y','linewidth',1.5);
 
                 set(0,'DefaultTextInterpreter', 'latex')
                 set(gca,'TickLabelInterpreter','latex');
