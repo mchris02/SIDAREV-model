@@ -22,7 +22,6 @@ for i=1:3
                 set(gca,'TickLabelInterpreter','latex');
                 xlim([0 365]);
                 title('Intensity of measures','Interpreter','latex')
-          %     title(['Strategy control against time for b2 = ' num2str(b2(i,1))]);
                 lgd = legend ('0','2000','4000', '8000','12000','Interpreter','latex');
                 title(lgd,'Cost of death','Interpreter','latex') 
                 xlabel('Days','Interpreter','latex');
@@ -46,7 +45,6 @@ end
  
                 set(gca,'TickLabelInterpreter','latex');
                 title('Rate of vaccination','Interpreter','latex');
-                %title(['Vaccination control against time for ThZ = ' num2str(ThZ(jj + 1))]);
                 lgd = legend ('0','2000','4000', '8000','12000','Interpreter','latex');
                 title(lgd,'Cost of death','Interpreter','latex')
                 xlabel('Days','Interpreter','latex');
@@ -85,7 +83,6 @@ end
                 set(gca, 'YTickLabel', get(gca,'YTick') * 100);
                 xlim([0 365]);
                 title('Infected','Interpreter','latex')
-                %title(['Infected state against time for ThZ = ' num2str(ThZ(jj + 1))]);
                 lgd = legend ('0','3000','6000', '9000','12000','15000', '20000','Interpreter','latex');
                 title(lgd,'Cost of death','Interpreter','latex')
                 xlabel('Days','Interpreter','latex');
@@ -106,7 +103,6 @@ end
                 set(gca, 'YTickLabel', get(gca,'YTick') * 100);
                 xlim([0 365]);
                 title('Detected','Interpreter','latex')
-                %title(['Infected state against time for ThZ = ' num2str(ThZ(jj + 1))]);
                 lgd = legend ('0','3000','6000', '9000','12000','15000', '20000','Interpreter','latex');
                 title(lgd,'Cost of death','Interpreter','latex')
                 xlabel('Days','Interpreter','latex');
