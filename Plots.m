@@ -17,7 +17,6 @@ for i=1:3
                  plot((u(:, 3)),'b','linewidth',1.5);
                  plot((u(:, 4)),'m','linewidth',1.5);
                  plot((u(:, 5)),'y','linewidth',1.5);
-
                 set(0,'DefaultTextInterpreter', 'latex')
                 set(gca,'TickLabelInterpreter','latex');
                 xlim([0 365]);
@@ -26,10 +25,10 @@ for i=1:3
                 title(lgd,'Cost of death','Interpreter','latex') 
                 xlabel('Days','Interpreter','latex');
                 ylabel('Intensity of measures','Interpreter','latex');
-        
-        
-               saveas(figure(i*j+k-1),['c_1_a_' num2str(c_1_a(i,1)) '_b2_' num2str(b2(j,1)) '_m_'  num2str(m(k,1)) '_U'],'epsc')
+                
+                saveas(figure(i*j+k-1),['c_1_a_' num2str(c_1_a(i,1)) '_b2_' num2str(b2(j,1)) '_m_' num2str(m(k,1)) '_U.eps'])
 
+       
                 clf
          end
     end
@@ -49,7 +48,7 @@ end
                 title(lgd,'Cost of death','Interpreter','latex')
                 xlabel('Days','Interpreter','latex');
                 ylabel('Rate of vaccination','Interpreter','latex');
-                saveas(figure(i*j+k-1),['c_1_a_' num2str(c_1_a(i,1)) '_b2_' num2str(b2(j,1)) '_m_'  num2str(m(k,1))  '_Psi.epsc'])
+                saveas(figure(i*j+k-1),['c_1_a_' num2str(c_1_a(i,1)) '_b2_' num2str(b2(j,1)) '_m_' num2str(m(k,1)) '_psi.eps'])
 
                 clf
                 figure(i*j+k-1);
@@ -68,7 +67,7 @@ end
                 title(lgd,'Cost of death','Interpreter','latex')
                 xlabel('Days','Interpreter','latex');
                 ylabel('Percentage of population','Interpreter','latex');
-                saveas(figure(i*j+k-1),['c_1_a_' num2str(c_1_a(i,1)) '_b2_' num2str(b2(j,1)) '_m_'  num2str(m(k,1))  '_Susceptible.epsc'])
+                saveas(figure(i*j+k-1),['c_1_a_' num2str(c_1_a(i,1)) '_b2_' num2str(b2(j,1)) '_m_' num2str(m(k,1)) '_Susceptible.eps'])
 
                 clf
                 figure(i*j+k-1);
@@ -87,7 +86,7 @@ end
                 title(lgd,'Cost of death','Interpreter','latex')
                 xlabel('Days','Interpreter','latex');
                 ylabel('Percentage of population','Interpreter','latex');
-                saveas(figure(i*j+k-1),['c_1_a_' num2str(c_1_a(i,1)) '_b2_' num2str(b2(j,1)) '_m_'  num2str(m(k,1))  '_Infected.epsc'])
+                saveas(figure(i*j+k-1),['c_1_a_' num2str(c_1_a(i,1)) '_b2_' num2str(b2(j,1)) '_m_' num2str(m(k,1)) '_Infected.eps'])
                 
                 clf
                 
@@ -107,7 +106,7 @@ end
                 title(lgd,'Cost of death','Interpreter','latex')
                 xlabel('Days','Interpreter','latex');
                 ylabel('Percentage of population','Interpreter','latex');
-                saveas(figure(i*j+k-1),['c_1_a_' num2str(c_1_a(i,1)) '_b2_' num2str(b2(j,1)) '_m_'  num2str(m(k,1))  '_Detected.epsc'])
+                saveas(figure(i*j+k-1),['c_1_a_' num2str(c_1_a(i,1)) '_b2_' num2str(b2(j,1)) '_m_' num2str(m(k,1)) '_Detected.eps'])
                 
                 clf
                 
@@ -127,7 +126,7 @@ end
                 title(lgd,'Cost of death','Interpreter','latex')
                 xlabel('Days','Interpreter','latex');
                 ylabel('Percentage of population','Interpreter','latex');
-                saveas(figure(i*j+k-1),['c_1_a_' num2str(c_1_a(i,1)) '_b2_' num2str(b2(j,1)) '_m_'  num2str(m(k,1))  '_Acutely.epsc'])
+                saveas(figure(i*j+k-1),['c_1_a_' num2str(c_1_a(i,1)) '_b2_' num2str(b2(j,1)) '_m_' num2str(m(k,1)) '_Acutely.eps'])
 
                 clf
                 
@@ -147,7 +146,7 @@ end
                 title(lgd,'Cost of death','Interpreter','latex')
                 xlabel('Days','Interpreter','latex');
                 ylabel('Percentage of population','Interpreter','latex');
-                saveas(figure(i*j+k-1),['c_1_a_' num2str(c_1_a(i,1)) '_b2_' num2str(b2(j,1)) '_m_'  num2str(m(k,1))  '_Recovered.epsc'])
+                saveas(figure(i*j+k-1),['c_1_a_' num2str(c_1_a(i,1)) '_b2_' num2str(b2(j,1)) '_m_' num2str(m(k,1)) '_Recovered.eps'])
                  clf
                  
                 figure(i*j+k-1);
@@ -167,7 +166,7 @@ end
                 title(lgd,'Cost of death','Interpreter','latex')
                 xlabel('Days','Interpreter','latex');
                 ylabel('Percentage of population','Interpreter','latex');
-                saveas(figure(i*j+k-1),['c_1_a_' num2str(c_1_a(i,1)) '_b2_' num2str(b2(j,1)) '_m_'  num2str(m(k,1))  '_Extinct.epsc'])
+                saveas(figure(i*j+k-1),['c_1_a_' num2str(c_1_a(i,1)) '_b2_' num2str(b2(j,1)) '_m_' num2str(m(k,1)) '_Extinct.eps'])
 
                 clf
                 figure(i*j+k-1);
@@ -186,7 +185,7 @@ end
                 title(lgd,'Cost of death','Interpreter','latex')
                 xlabel('Days','Interpreter','latex');
                 ylabel('Percentage of population','Interpreter','latex');
-                saveas(figure(i*j+k-1),['c_1_a_' num2str(c_1_a(i,1)) '_b2_' num2str(b2(j,1)) '_m_'  num2str(m(k,1))  '_Vaccinated.epsc'])
+                saveas(figure(i*j+k-1),['c_1_a_' num2str(c_1_a(i,1)) '_b2_' num2str(b2(j,1)) '_m_' num2str(m(k,1)) '_Vaccinated.eps'])
 
                 clf
       
