@@ -102,7 +102,7 @@ for j=1:N_iter
     for k=1:T
         
       
-      g2(k,1)=  (x(4,k)+x(3,k)) + (x(4,k)+x(3,k))*x(7,k)/z;
+      g2(k,1)=  (x(4,k)+x(3,k)) - (x(4,k)+x(3,k))*x(7,k)/z;
       g(k,1) = - m+ g2(k,1);
 
         if g(k,1) > 0 
@@ -119,13 +119,7 @@ for j=1:N_iter
         
     end
 end
-
-  %figure(1);plot(g);
-  %figure(2);plot(g2);
-  %figure(3)plot(sigma);
-  % figure(4);plot(psi);
-  % figure(5);plot(u);
-  % figure(6);plot(b2);
+figure(1);sig
   
  psi_o = psi;
 

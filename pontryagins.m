@@ -9,5 +9,5 @@ function [y,dy] = pontryagins(dt,u,l, pi, x, psi, s, beta, gamma_i, gamma_d, gam
          0;
          0;
          -(s*(x(4,1)+ x(3,1))/z)];
-
+    
       y = l - dy*dt; %backwards in time, since boundary condition for costate variables is at t = T
